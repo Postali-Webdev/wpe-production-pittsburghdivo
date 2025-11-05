@@ -1,0 +1,230 @@
+/**
+ * Web Font Styles, H Styles, Body Text Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+/* Fonts */
+body, h1, h2, h3, h4, h5, h6, p, a, ul {
+    // color: $body-text-color;
+} 
+p, a, ul, ol {
+
+}
+ul li, ol li {
+    margin: 0 0 0 20px;
+    font-size: 18px;
+}
+dl, blockquote, img {
+
+}
+
+a {
+    text-decoration:none;
+    transition:$trans;
+    &:hover {
+        // color:$lt-red;
+        text-decoration:none;
+    }
+}
+
+.btn {
+    display:flex;
+    padding:15px 40px;
+    text-decoration:none;
+    transition:$trans;
+    align-items: center;
+    justify-content: center;
+    background:$ltblue;
+    white-space: nowrap;
+    font-size: 14px !important;
+    color:$white !important;
+    text-transform: uppercase;
+    font-family: $sans;
+    font-weight: bold;
+    letter-spacing: .5px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    border-radius: 50px;
+
+    &:hover {
+        background:$orange;
+        color: $white;
+    }
+
+    &.nav {
+        display:flex;
+        padding:15px 40px;
+        text-decoration:none;
+        transition:$trans;
+        align-items: center;
+        justify-content: center;
+        background:$ltgrey;
+        border-bottom: 3px solid $orange;
+        white-space: nowrap;
+        font-size: 14px;
+        color:$blk !important;
+        text-transform: uppercase;
+        font-family: $sans;
+        font-weight: bold;
+        letter-spacing: .5px;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+        border-radius: 0;
+
+        @include respond(phone) {
+            width: 100%;
+        }
+
+        &:hover {
+            background:$orange;
+            color: $white !important;
+        }
+    }
+}
+
+.body-container,
+footer {
+    p {
+        font-size:17px;
+        line-height: 180%;
+        margin-bottom:30px;
+        font-family: $sans;
+        margin-top: 0;
+
+        a {
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: bold;
+            color:$ltblue;
+            text-decoration: none !important;
+
+            &:hover {
+                text-decoration: underline !important;
+            }
+        }
+
+        &.lg {
+            font-size: 22px;
+            line-height: 150%;
+        }
+    
+        &#breadcrumbs {
+            padding: 0;
+            font-size: 13px;
+            margin-top: 0;
+            margin-bottom: 40px;
+    
+            a {
+                color:$white;
+            }
+        }
+    }
+
+    ul {
+        margin-bottom: 30px;
+        
+        li {
+            font-family: $sans;
+            font-size:17px;
+            line-height: 180%;
+            font-weight: normal;
+
+            a {
+                font-weight: inherit;
+                font-size: inherit;
+            }
+        }
+
+        &.two-column {
+            -moz-column-count: 2;
+                 column-count: 2;
+
+            @include respond(phone) {
+                -moz-column-count: 1;
+                     column-count: 1;
+            }
+        }
+    }
+
+    h2, h3, h4 {
+        a {
+            font-family: inherit;
+            color: inherit;
+            font-size: inherit;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    
+    h1 {
+        font-size: 45px;
+        margin: 0;
+        font-weight: 400;
+        font-family: $serif;
+        text-transform: none;
+        line-height: 120%;
+
+        @include respond(phone) {
+            font-size: 32px;
+        }
+    }
+    
+    h2 {
+        color: $dkblue;
+        font-family: $serif;
+        font-size: 32px;
+        line-height: 120%;
+        font-style: normal;
+        font-weight: 400;
+        margin: 20px 0 20px 0;
+
+        @include respond(phone) {
+            font-size: 26px;
+        }
+    }
+    
+    h3 {
+        color: $ltblue;
+        font-family: $sans;
+        font-size: 26px;
+        line-height: 30px;
+        font-style: normal;
+        font-weight: 300;
+        margin: 20px 0 10px;
+
+        @include respond(phone) {
+            font-size: 22px;
+        }
+    }
+    
+    h4 {
+        color: $blk;
+        font-family: $sans;
+        font-size: 22px;
+        line-height: 30px;
+        font-style: normal;
+        font-weight: 300;
+        margin: 20px 0 10px;
+
+        @include respond(phone) {
+            font-size: 20px;
+        }
+    }
+
+    h5 {
+        color: $ltblue;
+        font-family: $serif;
+        font-size: 18px;
+        line-height: 30px;
+        font-style: normal;
+        font-weight: 400;
+        margin: 20px 0 10px;
+    }
+}

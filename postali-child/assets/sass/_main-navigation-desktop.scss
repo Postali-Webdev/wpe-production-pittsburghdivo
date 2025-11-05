@@ -1,0 +1,284 @@
+
+// keyframes for desktop sub-nav
+
+@keyframes fadein{
+    0% { opacity:0; top:36px; }
+    100% { opacity:1; top:46px; }
+}
+
+@-webkit-keyframes fadein{
+    0% { opacity:0; top:36px; }
+    100% { opacity:1; top:46px; }
+}
+
+
+header {    
+    #header-top {
+        background: $white;
+        height:90px;
+
+        #mobile-sub-close {
+            display:none;
+        }
+
+        #header-top_mobile {
+            display:none;
+        }
+            
+        
+    }
+
+    #header-bottom {
+        background:$ltblue;
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+
+        .menu {
+            list-style-type: none;
+            display: flex;
+            padding-bottom:0 !important;
+            align-items: center;
+            gap: 30px;
+
+            .tertiary-close {
+                display:none;
+            }
+
+            li {
+                display: flex;
+                margin-left:5px;
+                position: relative;
+                height: auto;
+
+                // hide mobile-only stuff on desktop
+                .accordion-toggle2 {
+                    display:none;
+                }
+
+                &.mobile {
+                    display:none !important;
+                }
+
+                .accordion-toggle {
+                    display:none;
+                }
+
+                &:not(.menu-item-search) {
+                    &.disable {
+                        opacity: 0.5;
+                        pointer-events: none;
+                    }
+                }
+
+                // hover states to display sub-menu
+                &:hover, 
+                > a:focus ~, 
+                > a:focus-visible ~ {
+                    a {
+                        &:before {
+                            right: 20px;
+                        }
+                    }
+
+                    .sub-menu {
+                        display:block;
+                        z-index: 0;
+                        -webkit-animation: .3s ease 0s normal forwards 1 fadein;
+                        animation: .3s ease 0s normal forwards 1 fadein;
+
+                        li {
+                            a {
+                                background:none;
+                                color:$blk !important;
+
+                                &:hover {
+                                    color:$blk !important;
+                                }
+                            }
+
+                            // nested 3rd level flyout
+                            .sub-menu {
+                                display:none;
+                                position: absolute;
+                                top: 0 !important;
+                                margin-left: 100%;
+
+                                &:hover {
+                                    display:block;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // active menu states for current page / current parent
+                &.current-menu-parent,
+                &.current-menu-item,
+                &.current-page-ancestor {
+                    a {
+
+                        &:before {
+                            right: 20px;
+                            bottom: 10px;
+                            display:block !important;
+                        }
+                    }
+
+                    &:hover {
+                        .sub-menu {
+                            left:0;
+
+                            .current_page_item {
+                                a {
+                                    color:$blk !important;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.menu-item-has-children {
+                    &::after {
+                        content: "\e914";
+                        font-family: $icomoon;
+                        position: absolute;
+                        font-size: 11px;
+                        margin-top: 17px;
+                        right: -6px;
+                        height: 30px;
+                        z-index: 1;
+                        color: #fff;
+                        display: block;
+
+                        @include respond(tab-land) {
+                            position: absolute;
+                            bottom: 0;
+                            content: "";
+                            left: 30px;
+                            width: calc(100% - 60px);
+                            background: white;
+                            height: 1px;
+                            opacity: .2;
+                        }
+                    }
+                }
+
+                a {
+                    padding:15px;
+                    font-size: 16px;
+                    font-weight:400;
+                    display: flex;
+                    align-items: center;
+                    z-index: 1;
+                    font-weight: 500;
+                    color:$white;
+                    font-family: $montserrat;
+                    text-transform: uppercase;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        z-index: -1;
+                        left: 20px;
+                        right: 100%;
+                        bottom: 10px;
+                        height: 1px;
+                        transition-property: right;
+                        transition-duration: 0.3s;
+                        transition-timing-function: ease-out;
+                        background:$white;
+                        opacity: .5;
+                    }
+                }
+
+                .sub-menu {
+                    width: auto;
+                    white-space: nowrap;
+                    transition: $trans;
+                    position: absolute;
+                    overflow: visible;
+                    background: $ltgrey;
+                    z-index: 500;
+                    margin: 0;
+                    padding: 0;
+                    display: none;
+                    width: auto;
+                    top:25px;
+                    padding:10px 0;
+
+                    .child-close {
+                        display:none;
+                    }
+
+                    li {
+                        margin-left: 0;
+                        
+                        &:hover {
+                            background: white;
+                            transition: $trans;
+
+                            @include respond(tab-port) {
+                                background:none;
+                            }
+
+                            a {
+                                text-decoration: underline;
+                            }
+                            
+                            .sub-menu {
+                                display:block;
+                                margin-top: -10px;
+
+                                li {
+                                    a {
+                                        font-weight: normal;
+                                        text-decoration: none;
+                                    }
+
+                                    &:hover {
+                                        a {
+                                            text-decoration: underline;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        a {
+                            padding:10px 25px 8px 25px;
+                            width: 100%;
+                            color:$dkblue;
+                            text-transform: none;
+                            font-weight: normal;
+
+                            &::before {
+                                display:none !important;
+                            }
+                        }
+
+                        &.menu-item-has-children {
+                            &::after {
+                                content: "\e913";
+                                font-family: $icomoon;
+                                position: absolute;
+                                font-size: 14px;
+                                margin-top: 11px;
+                                right: 10px;
+                                height: 30px;
+                                z-index: 1;
+                                color: $blk;
+                                display: block;
+                                opacity: .5;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @include nav-search-desktop;
+        }
+    }
+}

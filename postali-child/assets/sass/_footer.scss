@@ -1,0 +1,86 @@
+/**
+ * Footer Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+footer {
+    .footer {
+        background:$dkgrey;
+        padding-bottom: 30px;
+        padding-top: 50px;
+
+        p {
+            font-size: 15px;
+            margin-bottom: 10px;
+
+            &.heading {
+                font-family: $montserrat;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+
+        * {
+            color:$white;
+        }
+
+        a {
+            font-weight: bold;
+            color:$ltblue !important;
+            
+            &:hover {
+                color: $white !important;
+                text-decoration: underline;
+            }
+        }
+
+        .container {
+            .footer-logo {
+                max-width: 400px;
+                width: 100%;
+            }
+        
+            .map {
+                width: 100%;
+
+                iframe {
+                    width: 100%;
+                    height: 200px;
+                }
+            }
+
+            .footer-menu {
+                justify-content: flex-end;
+                flex-direction: column;
+                flex-wrap: wrap;
+                text-align: left;
+
+                ul {
+                    list-style-type: none;
+                    margin: 0;
+                    text-align: left;
+
+                    li {
+                        margin-bottom: 5px;
+                        margin-left: 0;
+                        line-height: 1;
+
+                        a {
+                            font-family: $sans;
+                            color: $ltblue;
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+
+            p.copyright-year {
+                text-align: left;
+                margin-top: 15px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}

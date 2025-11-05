@@ -1,0 +1,647 @@
+/**
+ * Page Template Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+*/
+
+.page-template-page-interior,
+.page-template-page-about {
+    .body-container {
+        @include banner;
+        @include primary-content;
+        @include cps-banner;
+    }
+
+    &.page-id-60 {
+        div#gform_wrapper_2 {
+            border: 1px solid #ccc;
+            padding: 0px 20px;
+            margin: 30px 0 60px;
+            border-radius: 5px;
+            background: #f9f9f9;
+
+            p.gform_required_legend {
+                font-size: 12px !important;
+                margin-bottom: 20px;
+            }
+
+            #gform_submit_button_2 {
+                display: flex;
+                height: 40px;
+                width: auto;
+                padding: 0 40px;
+                border: none;
+                background: $orange;
+                color: $white;
+                border-radius: 50px;
+                transition: $trans;
+
+                &:hover {
+                    background:$white;
+                    color:$dkblue;
+                }
+            }
+
+            input,
+            textarea {
+                border: 1px solid #ccc;
+                border-radius: 4px;
+
+                &::-webkit-input-placeholder {
+                    font-family: $sans;
+                    font-size: 14px;
+                }
+
+                &::-moz-placeholder {
+                    font-family: $sans;
+                    font-size: 14px;
+                }
+
+                &:-ms-input-placeholder {
+                    font-family: $sans;
+                    font-size: 14px;
+                }
+
+                &::-ms-input-placeholder {
+                    font-family: $sans;
+                    font-size: 14px;
+                }
+
+                &::placeholder {
+                    font-family: $sans;
+                    font-size: 14px;
+                }
+            }
+
+            .gfield_label {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.page-template-page-about {
+    .banner-icon {
+        position: absolute;
+        left: 50%;
+        justify-content: center;
+        display: flex;
+        font-size: 125px;
+        width: 125px;
+        height: 125px;
+        margin: 0 auto;
+        background: #fff;
+        z-index: 4;
+        border-radius: 50%;
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+        transform: translateX(-50%);
+
+        i {
+            color:$ltblue;
+        }
+    }
+
+    .banner {
+        @include respond(phone) {
+            background-position: center right -200px !important;
+        }
+
+        .column-50 {
+            @include respond(tab-port) {
+                width: 60%;
+            }
+
+            @include respond(phone) {
+                width: 100%;
+            }
+        }
+    }
+
+    .primary-content {
+        padding-top: 180px !important;
+    }
+    
+    .container {
+        .columns {
+            .column-50 {
+                &.credentials {
+                    background: $ltgrey;
+                    
+
+                    .credentials-content {
+                        padding: 30px 30px 20px;
+                    }
+
+                    h3 {
+                        font-family: $serif;
+                        margin-bottom: 5px
+                    }
+
+                    ul {
+                        margin-bottom: 15px
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-template-page-practice-parent {
+    .body-container {
+        @include banner;
+        @include primary-content;
+        @include cps-banner;
+
+        .banner {
+            .banner-icon {
+                z-index: 5;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                font-size: 150px;
+            }
+        }
+
+        .banner-icon {
+            justify-content: center;
+            display: flex;
+            font-size: 125px;
+            width: 125px;
+            height: 125px;
+            margin: 0 auto;
+            background: $white;
+            z-index: 4;
+            position: relative;
+            border-radius: 50%;
+            margin-bottom: -110px;
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, .2);
+
+            i {
+                color:$ltblue;
+            }
+        }
+
+        .icon_container {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -125px);
+            background: $white;
+            height: 120px;
+            width: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+
+            i {
+                font-size: 120px;
+                color: $ltblue;
+            }
+        }
+
+        .practice_area_nav {
+            margin-bottom: 10px;
+            text-align: center;
+            margin-top: 20px;
+            
+            p {
+                text-transform: uppercase;
+                font-weight: 600 !important;
+                font-size: 1.1em !important;
+                letter-spacing: 1px !important;
+                margin: 10px auto !important;
+                border: 0;
+                padding: 0;
+            }
+        }
+
+        .on-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            margin: 0 auto 60px;
+
+            @include respond(tab-port) {
+                flex-wrap: wrap;
+            }
+            
+            .btn {
+                margin: 0 5px;
+                position: relative;
+
+                @include respond(tab-port) {
+                    margin:5px;
+                }
+
+                &::after {
+                    content: " ";
+                    position: absolute;
+                    bottom: -13px;
+                    left: 50%;
+                    margin-left: -10px;
+                    border-style: solid;
+                    border-width: 10px 10px 0;
+                    border-color: $orange transparent transparent;
+                    display:none;
+                }
+
+                &:hover {
+                    &::after {
+                        display: block;
+                    }
+                }
+            }
+            
+        }
+
+        .intro {
+            p {
+                text-align: center;
+                font-size: 22px;
+                line-height: 155%;
+            }
+        }
+
+        .intro-copy {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            
+            @include respond(tab-port) {
+                flex-wrap: wrap;
+            }
+
+            .left {
+                width: auto;
+
+                @include respond(tab-port) {
+                    width: 100%;
+                }
+            }
+
+            .right {
+                min-width: 30%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                @include respond(tab-port) {
+                    width: 100%;
+                }
+
+                .cta {
+                    box-sizing: border-box;
+                    padding: 30px;
+                    background: $ltgrey;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    text-align: center;
+
+                    span {
+                        font-size: 175px;
+                        line-height: 60%;
+                        margin: 0 auto 10px;
+                        display: block;
+                        color:$ltblue;
+                    }
+
+                    p {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    #panel_2 {
+        background: $ltgrey;
+        background-size: cover;
+        background-position: center;
+        border-top: 4px solid $orange;
+        padding: 50px 0;
+
+        .column-50 {
+            &.form {
+                background: $dkblue;
+                justify-content: center;
+                margin-top: 30px;
+                padding: 0 40px 20px;
+                box-sizing: border-box;
+                border-radius: 10px;
+
+                p.gform_required_legend {
+                    color: $white;
+                    font-size: 12px;
+                    margin-bottom: 20px;
+                }
+
+                .gfield_required {
+                    color: $orange;
+                }
+
+                .gfield_label {
+                    color: $white;
+                    font-family: $sans;
+                }
+
+                #gform_submit_button_1 {
+                    display: flex;
+                    height: 40px;
+                    width: auto;
+                    padding: 0 40px;
+                    border: none;
+                    background: $orange;
+                    color: $white;
+                    border-radius: 50px;
+                    transition: $trans;
+
+                    &:hover {
+                        background:$white;
+                        color:$dkblue;
+                    }
+                }
+            }
+        }
+    }
+
+    #panel_4 {
+        background: $ltgrey;
+    }
+
+    #practice_area_testimonial {
+        border-top: 4px solid $orange;
+        border-bottom: 4px solid $orange;
+        background-attachment: fixed;
+        background-position: top 60px right;
+        background-size: cover;
+
+        @include respond(phone) {
+            background-position: center right -280px;
+        }
+
+        p {
+            color:$white;
+            font-family: $serif;
+            font-size: 28px;
+            line-height: 150%;
+            font-weight: bold;
+            margin-bottom: 0;
+            font-style: italic;
+
+            @include respond(phone) {
+                font-size: 24px;
+            }
+        }
+    }
+
+    .footer-cta {
+        background: url(/wp-content/uploads/2025/04/bg-pittsburgh.jpg);
+        background-size: cover;
+        background-position: center;
+
+        .attorney {
+            position: absolute;
+            right: 6%;
+            bottom: -80px;
+            max-width: 460px;
+
+            @include respond(tab-land) {
+                max-width: 400px;
+            }
+
+            @include respond(tab-port) {
+                max-width: 500px;
+                position: relative;
+                right: auto;
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.single {
+    .single-post {
+        padding-top: 40px;
+
+        #breadcrumbs {
+            color:$mdgrey;
+            font-weight: 500;
+
+            a {
+                color:$mdgrey;
+            }
+        }
+
+        h1 {
+            font-family: $sans;
+            font-size: 30px;
+            line-height: 125%;
+            margin-bottom: 20px;
+        }
+
+        .create {
+            font-family: $sans;
+            font-size: 17px;
+            
+            a {
+                color:$ltblue;
+                font-weight: bold;
+                font-family: inherit;
+            }
+        }
+
+        .article-single-featured-image {
+            width: 100%;
+            margin-bottom: 40px;
+
+            img.article-featured-image {
+                width: 100%;
+            }
+        }
+
+        .column-25 {
+            width: 28%;
+
+            @include respond(tab-port) {
+                margin-top: 50px;
+                width: 100%;
+            }
+            
+            .sidebar-header {
+                padding: 15px;
+                background: $ltblue;
+                width: 100%;
+                color: $white;
+                font-family: $serif;
+                font-size: 20px;
+            }
+    
+            .post {
+                background: $ltgrey;
+                margin: 4px 0;
+                padding: 15px;
+                width: 100%;
+
+                p {
+                    font-size: 15px;
+                    line-height: 150%;
+                    font-weight: normal;
+                    margin-bottom: 0;
+
+                    a {
+                        color:$dkblue !important;
+                    }
+                }
+            }
+
+            .sidebar-form {
+                background: $ltgrey;
+                padding: 15px;
+                width: 100%;
+
+                h5 {
+                    margin-top: 0;
+                    font-size: 20px;
+                }
+
+                p {
+                    font-size: 15px;
+                    line-height: 150%;
+                }
+
+                #gform_wrapper_1 {
+                    p.gform_required_legend {
+                        font-size: 12px !important;
+                        margin-bottom: 20px;
+                    }
+
+                    .gfield_label {
+                        font-size: 14px;
+                    }
+
+                    .gform-footer.gform_footer.top_label {
+                        padding-bottom: 0 !important;
+                    }
+
+                    input#gform_submit_button_1 {
+                        border: none;
+                        background: $orange;
+                        padding: 10px 30px;
+                        border-radius: 50px;
+                        color: $white;
+                        cursor: pointer;
+                        width: -webkit-fit-content;
+                        width: -moz-fit-content;
+                        width: fit-content;
+
+                        &:hover {
+                            background:$dkblue;
+                        }
+                    }
+
+                    input,
+                    textarea {
+                        width: 100%;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                    }
+                }
+            }
+        }
+
+        .post-meta-categories {
+            a {
+                padding: 6px 10px;
+                background: $ltblue;
+                font-size: 13px;
+                color: $white;
+                border-radius: 4px;
+
+                &:hover {
+                    background-color: $dkblue;
+                }
+            }
+        }
+    }
+}
+
+.blog,
+.category {
+    .posts {
+        justify-content: flex-start !important;
+    }
+    
+    article {
+        border: none;
+        padding-bottom: 0;
+        width: 31%;
+        margin: 1%;
+        box-sizing: border-box;
+        transition:$trans;
+        background:$ltgrey;
+
+        &:hover {
+            h2 {
+                text-decoration: underline;
+            }
+
+            .post-image {
+                background-size: 145%;
+            }
+        }
+
+        @include respond(tab-port) {
+            width:100%;
+            margin:10px 0;
+        }
+
+        .post-image {
+            height: 200px;
+            background-size: 140%;
+            background-position: center;
+            transition: $trans;
+
+            @include respond(tab-land) {
+                background-size: cover;
+            }
+        }
+
+        .meta-content {
+            padding: 30px 40px;
+            
+            .blog-date {
+                font-size: 12px;
+                margin-bottom: 5px !important;
+            }
+            
+            h2 {  
+                font-size: 26px;
+                margin-bottom: 15px !important;
+                color:$dkblue;
+            }
+
+            p {
+                font-family: $sans;
+                color:$blk;
+                font-size: 16px;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.search {
+    .spacer-line {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #515151;
+        height: 1px;
+        margin: 40px 0 10px 0;
+    }
+}

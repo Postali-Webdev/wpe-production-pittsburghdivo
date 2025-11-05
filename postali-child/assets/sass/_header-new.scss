@@ -1,0 +1,113 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    display: flex !important;
+    height: auto;
+    transition: $trans;
+    flex-wrap: wrap;
+    
+    #header-top {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+        padding: 0 60px;
+        height: 100px !important;
+
+        @include respond(desktop) {
+            padding:0 30px;
+        }
+        
+        &_left {
+            display: flex;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            justify-content: flex-start;
+
+            .custom-logo-link {
+                width: 100%;
+                height: auto;
+                display:flex;
+
+                .custom-logo {
+                    max-height: 60px;
+                    max-width: 450px;
+                    width: 100%;
+                }
+            }
+            
+            @include respond(tab-land) {
+                width: 100%;
+            }
+        }
+
+        &_right {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+
+            @include respond(tab-port) {
+                display: none;
+            }
+
+            .cta-text {
+                display: flex;
+                flex-direction: column;
+
+                p {
+                    margin: 0;
+                    text-align: center;
+                    line-height: 1.2;
+                    font-size: 14px;
+                    font-family: $sans;
+                    font-weight: normal;
+                    color:$mdgrey;
+    
+                    &.lg {
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: $ltblue;
+                    }
+                }
+            }
+
+            .phone-email {
+                display: flex;
+                justify-content: center;
+                gap: 40px;
+                margin: 5px 0 0;
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    left: 50%;
+                    content: "|";
+                    height: 100%;
+                    font-size: 20px;
+                    color: #ccc;
+                    margin-top: -2px;
+                }
+
+                p {
+                    margin: 0;
+                    line-height: 1;
+                    font-size: 14px;
+                    font-family: $sans;
+
+                    a {
+                        font-family: $sans;
+                        color:$ltblue;
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
