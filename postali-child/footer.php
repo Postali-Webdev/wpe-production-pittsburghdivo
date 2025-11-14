@@ -28,7 +28,9 @@
                 </div>
                 <div class="column-33 footer-menu">
                     <p class="heading">Quick Links</p>
+                    <nav role="navigation">
                     <?php wp_nav_menu( [ 'container' => false, 'theme_location' => 'footer-nav' ] ); ?>
+                    </nav>
                     <p class="copyright-year">Copyright &copy; <?php echo date('Y'); ?> Pittsburgh Divorce & Family Law, LLC</p>
                 </div>
                 <div class="column-33">
