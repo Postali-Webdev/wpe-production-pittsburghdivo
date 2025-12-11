@@ -652,5 +652,21 @@ article {
 }
 
 .awards {
-    padding: 50px 0;
+    padding: 30px 0;
+    background: #efefef;
+
+    .column-full {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .award-img {
+            margin: 20px 40px;
+            img {
+                max-width: 190px;
+                max-height: 110px;
+            }
+        }
+    }
+    
 }

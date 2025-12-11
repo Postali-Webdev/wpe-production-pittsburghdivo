@@ -124,6 +124,26 @@ get_header();?>
         </div>
     </section>
 
+    <section class="awards">
+        <div class="container">
+            <div class="columns">
+                <div class="column-full">
+                    <?php if( have_rows('awards','options') ): ?>
+                    <?php while( have_rows('awards','options') ): the_row(); ?>  
+                        <div class="award-img">
+                            <?php 
+                            $image = get_sub_field('award_logo');
+                            if( !empty( $image ) ): ?>
+                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                            <?php endif; ?>
+                        </div>
+                    <?php endwhile; ?>
+                    <?php endif; ?> 
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="panel-4" style="background-image:url('<?php the_field('p4_background'); ?>');">
         <div class="container">
             <div class="columns">
